@@ -61,7 +61,7 @@ public class Calculator {
 		
 	}
 	
-	/** returns the entire history of the calculator object
+	/** returns the entire history of the calculator object seriously
 	 * 
 	 * 
 	 */
