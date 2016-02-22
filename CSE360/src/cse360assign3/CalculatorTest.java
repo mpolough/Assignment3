@@ -7,7 +7,7 @@ import org.junit.Test;
 public class CalculatorTest {
 	
 	@Test
-	public void CalculatorStub()
+	public void CalculatorStub() //base Case
 	{
 		Calculator dim = new Calculator();
 		assertNotNull(dim);
@@ -15,7 +15,7 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void getTotalStub()
+	public void getTotalStub() //base Case
 	{
 		Calculator dim = new Calculator();
 		assertEquals(dim.getTotal(),0);
@@ -23,7 +23,7 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void addStub()
+	public void addStub() //base Case
 	{
 		Calculator dim = new Calculator();
 		dim.add(4);
@@ -32,7 +32,7 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void addNegative()
+	public void addNegative() //tests negative case
 	{
 		Calculator dim = new Calculator();
 		dim.add(-9);
@@ -41,7 +41,7 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void subtractStub()
+	public void subtractStub() //base Case
 	{
 		Calculator dim = new Calculator();
 		dim.subtract(3);
@@ -50,7 +50,7 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void subtractNegative()
+	public void subtractNegative() //tests negative case
 	{
 		Calculator dim = new Calculator();
 		dim.subtract(-3);
@@ -59,7 +59,7 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void multiplyStub()
+	public void multiplyStub() //base Case
 	{
 		Calculator dim = new Calculator();
 		dim.add(3);
@@ -69,7 +69,7 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void multiplyByZero()
+	public void multiplyByZero() //tests zero case
 	{
 		Calculator dim = new Calculator();
 		dim.add(3);
@@ -79,7 +79,7 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void multiplyByNegative()
+	public void multiplyByNegative() //tests negative case
 	{
 		Calculator dim = new Calculator();
 		dim.add(3);
@@ -89,7 +89,7 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void divideStub()
+	public void divideStub() //base Case
 	{
 		Calculator dim = new Calculator();
 		dim.add(9);
@@ -99,7 +99,7 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void divideByZero()
+	public void divideByZero() //tests zero case
 	{
 		Calculator dim = new Calculator();
 		dim.add(9);
@@ -109,7 +109,7 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void divideByNegative()
+	public void divideByNegative() //tests negative case
 	{
 		Calculator dim = new Calculator();
 		dim.add(9);
@@ -119,7 +119,7 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void getHistoryStub()
+	public void getHistoryStub() //base Case
 	{
 		Calculator dim = new Calculator();
 		assertEquals(dim.getHistory(),"0");
@@ -127,7 +127,7 @@ public class CalculatorTest {
 	}
 
 	@Test
-	public void getHistorySingleTest()
+	public void getHistorySingleTest() //tests single case
 	{
 		Calculator dim = new Calculator();
 		dim.add(3);
@@ -136,20 +136,19 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void getHistoryMultiTest()
+	public void getHistoryMultiTest() //tests multiple case
 	{
 		Calculator dim = new Calculator();
 		dim.add(12);
 		dim.divide(3);
 		dim.multiply(2);
 		dim.subtract(5);
-		System.out.println(dim.getHistory());
 		assertEquals(dim.getHistory(),"0 + 12 / 3 * 2 - 5");
 		
 	}
 	
 	@Test
-	public void getHistoryOmniTest()
+	public void getHistoryOmniTest() //tests negative and multiple case
 	{
 		Calculator dim = new Calculator();
 		dim.add(12);

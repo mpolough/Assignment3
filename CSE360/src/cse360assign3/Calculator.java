@@ -1,3 +1,4 @@
+// Michael O'Loughlin PIN#619
 /**
  * emulates a calculator
  * 
@@ -27,7 +28,7 @@ public class Calculator {
 	
 	/** Gets the total of the calculator object
 	 * 
-	 * @return total 		the total for the calculator object
+	 * @return  the total for the calculator object
 	 */
 	public int getTotal () {
 		return total;
@@ -86,7 +87,7 @@ public class Calculator {
 	
 	/** returns the entire history of the calculator object seriously
 	 * 
-	 * 
+	 * @return The usage history of the Calculator
 	 */
 	public String getHistory () {
 		
