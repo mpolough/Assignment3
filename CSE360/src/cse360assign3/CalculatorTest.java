@@ -9,42 +9,59 @@ public class CalculatorTest {
 	@Test
 	public void CalculatorStub()
 	{
-		fail();
+		Calculator dim = new Calculator();
+		assertNotNull(dim);
 		
 	}
 	
 	@Test
 	public void getTotalStub()
 	{
-		fail();
+		Calculator dim = new Calculator();
+		assertEquals(dim.getTotal(),0);
 		
 	}
 	
 	@Test
 	public void addStub()
 	{
-		fail();
+		Calculator dim = new Calculator();
+		dim.add(4);
+		assertEquals(dim.getTotal(),4);
 		
 	}
 	
 	@Test
 	public void subtractStub()
 	{
-		fail();
+		Calculator dim = new Calculator();
+		dim.subtract(3);
+		assertEquals(dim.getTotal(),-3);
 		
 	}
 	
 	@Test
 	public void multiplyStub()
 	{
-		fail();
+		Calculator dim = new Calculator();
+		dim.add(3);
+		dim.multiply(3);
+		assertEquals(dim.getTotal(),9);
+		dim.multiply(0);
+		assertEquals(dim.getTotal(),0);
 		
 	}
 	
 	@Test
 	public void divideStub()
 	{
-		fail();
+		Calculator dim = new Calculator();
+		dim.add(9);
+		dim.divide(0);
+		assertEquals(dim.getTotal(),0);
+		dim.add(9);
+		dim.divide(3);
+		assertEquals(dim.getTotal(),3);
 		
 	}
 	
@@ -52,7 +69,7 @@ public class CalculatorTest {
 	public void getHistoryStub()
 	{
 		Calculator dim = new Calculator();
-		assertNull(dim.getHistory());
+		assertEquals(dim.getHistory(),"");
 		
 	}
 
