@@ -13,12 +13,16 @@ public class Calculator {
 	/** creates a variable that keeps track of the total of all operations */
 	private int total;
 	
+	/** keeps track of all calculator class history*/
+	private String history;
+	
 	/** Constructor for every calculator object
 	 * 
 	 * 
 	 */
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		history = "0";
 	}
 	
 	/** Gets the total of the calculator object
@@ -35,6 +39,7 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		
+		history = history + " + " + value;
 		total = total + value;
 		
 	}
@@ -45,6 +50,7 @@ public class Calculator {
 	 */
 	public void subtract (int value) {
 		
+		history = history + " - " + value;
 		total = total - value;
 		
 	}
@@ -55,6 +61,7 @@ public class Calculator {
 	 */
 	public void multiply (int value) {
 		
+		history = history + " * " + value;
 		total = total * value;
 		
 	}
@@ -65,6 +72,7 @@ public class Calculator {
 	 */
 	public void divide (int value) {
 		
+		history = history + " / " + value;
 		if (value == 0)
 		{
 			total = 0;
@@ -81,7 +89,8 @@ public class Calculator {
 	 * 
 	 */
 	public String getHistory () {
-		return "";
+		
+		return history;
 	}
 
 }

@@ -32,11 +32,29 @@ public class CalculatorTest {
 	}
 	
 	@Test
+	public void addNegative()
+	{
+		Calculator dim = new Calculator();
+		dim.add(-9);
+		assertEquals(dim.getTotal(),-9);
+		
+	}
+	
+	@Test
 	public void subtractStub()
 	{
 		Calculator dim = new Calculator();
 		dim.subtract(3);
 		assertEquals(dim.getTotal(),-3);
+		
+	}
+	
+	@Test
+	public void subtractNegative()
+	{
+		Calculator dim = new Calculator();
+		dim.subtract(-3);
+		assertEquals(dim.getTotal(),3);
 		
 	}
 	
@@ -47,8 +65,26 @@ public class CalculatorTest {
 		dim.add(3);
 		dim.multiply(3);
 		assertEquals(dim.getTotal(),9);
+		
+	}
+	
+	@Test
+	public void multiplyByZero()
+	{
+		Calculator dim = new Calculator();
+		dim.add(3);
 		dim.multiply(0);
 		assertEquals(dim.getTotal(),0);
+		
+	}
+	
+	@Test
+	public void multiplyByNegative()
+	{
+		Calculator dim = new Calculator();
+		dim.add(3);
+		dim.multiply(-4);
+		assertEquals(dim.getTotal(),-12);
 		
 	}
 	
@@ -57,11 +93,28 @@ public class CalculatorTest {
 	{
 		Calculator dim = new Calculator();
 		dim.add(9);
-		dim.divide(0);
-		assertEquals(dim.getTotal(),0);
-		dim.add(9);
 		dim.divide(3);
 		assertEquals(dim.getTotal(),3);
+		
+	}
+	
+	@Test
+	public void divideByZero()
+	{
+		Calculator dim = new Calculator();
+		dim.add(9);
+		dim.divide(0);
+		assertEquals(dim.getTotal(),0);
+		
+	}
+	
+	@Test
+	public void divideByNegative()
+	{
+		Calculator dim = new Calculator();
+		dim.add(9);
+		dim.divide(-3);
+		assertEquals(dim.getTotal(),-3);
 		
 	}
 	
@@ -69,8 +122,41 @@ public class CalculatorTest {
 	public void getHistoryStub()
 	{
 		Calculator dim = new Calculator();
-		assertEquals(dim.getHistory(),"");
+		assertEquals(dim.getHistory(),"0");
 		
 	}
 
+	@Test
+	public void getHistorySingleTest()
+	{
+		Calculator dim = new Calculator();
+		dim.add(3);
+		assertEquals(dim.getHistory(),"0 + 3");
+		
+	}
+	
+	@Test
+	public void getHistoryMultiTest()
+	{
+		Calculator dim = new Calculator();
+		dim.add(12);
+		dim.divide(3);
+		dim.multiply(2);
+		dim.subtract(5);
+		System.out.println(dim.getHistory());
+		assertEquals(dim.getHistory(),"0 + 12 / 3 * 2 - 5");
+		
+	}
+	
+	@Test
+	public void getHistoryOmniTest()
+	{
+		Calculator dim = new Calculator();
+		dim.add(12);
+		dim.divide(-3);
+		dim.multiply(2);
+		dim.subtract(-5);
+		assertEquals(dim.getHistory(),"0 + 12 / -3 * 2 - -5");
+		
+	}
 }
